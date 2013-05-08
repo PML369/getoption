@@ -7,11 +7,11 @@ Modes
 -----
 The class has 4 modes of operation at the moment. These are: 
 - Windows (auto-selected at compile time): 
--	Graphical (Using WINAPI) - #define GRAPHICAL before initialiasation to use 
--	Text - The default on Windows. Simple command-line interface 
+ - Graphical (Using WINAPI) - #define GRAPHICAL before initialiasation to use 
+ - Text - The default on Windows. Simple command-line interface 
 - Linux (alternatively not Windows - again auto-selected): 
--	Graphical (Using gtk+ 3.2 or higher - might work with lower) - #define GRAPHICAL   before initialiasation to use 
--	Text - The default on Linux. Simple command-line interface 
+ - Graphical (Using gtk+ 3.2 or higher - might work with lower) - #define GRAPHICAL   before initialiasation to use 
+ - Text - The default on Linux. Simple command-line interface 
 		
 Features
 --------
