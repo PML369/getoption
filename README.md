@@ -26,7 +26,7 @@ The class has 4 modes of operation at the moment. These are:
 
 ##Usage
 1. If you want to, define graphical
-    #define GRAPHICAL
+    ```#define GRAPHICAL```
 2. Include the class file
 3. Declare (and define if you want) your "driver" function to match this template:
     dialog driver(int,int);
