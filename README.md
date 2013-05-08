@@ -26,19 +26,23 @@ The class has 4 modes of operation at the moment. These are:
 
 ##Usage
 1. If you want to, define graphical
+
     ```#define GRAPHICAL```
 2. Include the class file
 3. Declare (and define if you want) your "driver" function to match this template:
-    dialog driver(int,int);
+    
+    ```dialog driver(int,int);```
 The return type is a struct defined in the file, and the 2 arguments are, in order, the status you told it to report (0 on startup) and the number of the button clicked (top=1).
 4. Initialise the class
-    getoption option("*class_name*","*window_name*",*width*,*height*,*background_r*,*background_g*,*background_b*,*button_r*,*button_g*,*button_b*,*font_size(pt)*,"*font_name*",*driver_function*);
+    
+    ```getoption option("*class_name*","*window_name*",*width*,*height*,*background_r*,*background_g*,*background_b*,*button_r*,*button_g*,*button_b*,*font_size(pt)*,"*font_name*",*driver_function*);```
 5. Define the main function (I want this in the class - any ideas, email me):
-    #if (defined (__WIN32__) || (_MSC_VER)) && (defined GRAPHICAL)
+    
+    ```#if (defined (__WIN32__) || (_MSC_VER)) && (defined GRAPHICAL)
     int WINAPI WinMain(HINSTANCE inst, HINSTANCE p_inst, LPSTR arg, int nfs) { option.main(inst,p_inst,arg,nfs); }
     #else
     int main(int argc,char *argv[]) { option.main(argc,argv); }
-    #endif
+    #endif```
 Just copy + paste these lines in for now.
 
 ##Contact
