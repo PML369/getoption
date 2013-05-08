@@ -312,7 +312,7 @@ getoption::getoption(std::string class_name, std::string window_name, int width,
 						// A button was clicked
 						if ((iMID >= 10) && (iMID < 130)) // One of our buttons was clicked - doesn't matter which one
 						{
-							int option=((iMID-10)/4)-3;
+							int option=iMID-9; // -10+1
 							// Get new data
 							if (option == 1) { _tmp=_driver(_globalstatusfirstopt,option); } else { _tmp=_driver(_globalstatus,option); }
 							if (_tmp.buttons.size() != 0) { _data=_tmp; }
@@ -441,7 +441,7 @@ getoption::getoption(std::string class_name, std::string window_name, int width,
 				std::cout << _data.title << std::endl;
 				for (unsigned int i=0; i < _data.buttons.size(); i++)
 				{
-					std::cout << String(i) << " - " << _data.buttons.at(i) << std::endl;
+					std::cout << String(i+1) << " - " << _data.buttons.at(i) << std::endl;
 				}
 				int option=_getch()-48;
 				if (option == 1) { _tmp=_driver(_data.status_1st_opt,option); } else { _tmp=_driver(_data.status_other_opt,option); }
@@ -600,7 +600,7 @@ getoption::getoption(std::string class_name, std::string window_name, int width,
 				std::cout << _data.title << std::endl;
 				for (unsigned int i=0; i < _data.buttons.size(); i++)
 				{
-					std::cout << String(i) << " - " << _data.buttons.at(i) << std::endl;
+					std::cout << String(i+1) << " - " << _data.buttons.at(i) << std::endl;
 				}
 				int option=getch()-48;
 				if (option == 1) { _tmp=_driver(_data.status_1st_opt,option); } else { _tmp=_driver(_data.status_other_opt,option); }
