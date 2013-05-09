@@ -37,6 +37,7 @@ The class has 4 modes of operation at the moment. These are:
 4. Initialise the class
     
         ```getoption option("*class_name*","*window_name*",*width*,*height*,*background_r*,*background_g*,*background_b*,*button_r*,*button_g*,*button_b*,*font_size(pt)*,"*font_name*",*driver_function*);```
+		
 5. Define the main function (I want this in the class - any ideas, email me):
     
         ```#if (defined (__WIN32__) || (_MSC_VER)) && (defined GRAPHICAL)```
