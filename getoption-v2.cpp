@@ -312,7 +312,7 @@ getoption::getoption(std::string class_name, std::string window_name, int width,
 						// A button was clicked
 						if ((iMID >= 10) && (iMID < 130)) // One of our buttons was clicked - doesn't matter which one
 						{
-							int option=iMID-9; // -10+1
+							int option=((iMID-10)/4)+1; // -10+1
 							// Get new data
 							if (option == 1) { _tmp=_driver(_globalstatusfirstopt,option); } else { _tmp=_driver(_globalstatus,option); }
 							if (_tmp.buttons.size() != 0) { _data=_tmp; }
@@ -332,7 +332,7 @@ getoption::getoption(std::string class_name, std::string window_name, int width,
 				}
 				case WM_KEYDOWN:
 				{
-					int keynum=((int)wParam - 0x30);
+					unsigned int keynum=((unsigned int)wParam - 0x30);
 					if (keynum <= _hwndbutton.size())
 					{
 						SendMessage(_hwndbutton[keynum-1],BM_CLICK,0,0);
@@ -398,7 +398,7 @@ getoption::getoption(std::string class_name, std::string window_name, int width,
 		void getoption::draw_buttons(HWND parent)
 		{
 			// Destroy all current buttons
-			for (int y=0; y < _hwndbutton.size(); y++)
+			for (unsigned int y=0; y < _hwndbutton.size(); y++)
 			{
 				DestroyWindow(_hwndbutton[y]);
 			}
