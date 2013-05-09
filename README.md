@@ -41,6 +41,7 @@ The class has 4 modes of operation at the moment. These are:
 5. Define the main function (I want this in the class - any ideas, email me):
     
     ```if (defined (__WIN32__) || (_MSC_VER)) && (defined GRAPHICAL)```
+	
     int WINAPI WinMain(HINSTANCE inst, HINSTANCE p_inst, LPSTR arg, int nfs) { option.main(inst,p_inst,arg,nfs); }
     (HASH)else
     int main(int argc,char *argv[]) { option.main(argc,argv); }
