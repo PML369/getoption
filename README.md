@@ -36,27 +36,20 @@ The class has 4 modes of operation at the moment. These are:
 	The return type is a struct defined in the file, and the 2 arguments are, in order, the status you told it to report (0 on startup) and the number of the button clicked (top=1).
 4. Initialise the class
     
-    ```getoption option("*class_name*","*window_name*",*width*,*height*,*background_r*,*background_g*,*background_b*,*button_r*,*button_g*,*button_b*,*font_size(pt)*,"*font_name*",*driver_function*);```
+    ```getoption option("*class_name*","*window_name*",*width*,*height*,*background_r*,*background_g*,*background_b*,
+    *button_r*,*button_g*,*button_b*,*font_size(pt)*,"*font_name*",*driver_function*);```
 		
-5. Define the main function (I want this in the class - any ideas, email me):
+5. Define the main function by using the following macro:
+
+    ```MAIN_MACRO(name)```
     
-    ```(HASH)if (defined (__WIN32__) || (_MSC_VER)) && (defined GRAPHICAL) ```
-	
-    ```int WINAPI WinMain(HINSTANCE inst, HINSTANCE p_inst, LPSTR arg, int nfs) { option.main(inst,p_inst,arg,nfs); } ```
-
-    ```(HASH)else ```
-
-    ```int main(int argc,char *argv[]) { option.main(argc,argv); } ```
-
-    ```(HASH)endif ```
-
-Just copy + paste these lines in for now.
+    Where name represents the name of your getoption object.
 
 ##Contact
 If you have any requests for future releases, feel free to email plpub2@gmail.com 
 
 ##Copyright
-This class is Copyright (C) 2013  Peter Lotts. 
+This code is Copyright (C) 2013  Peter Lotts. 
 It is released under the GNU General Public Licence version 3. 
 
 This program is distributed in the hope that it will be useful, 

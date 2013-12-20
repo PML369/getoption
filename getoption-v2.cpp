@@ -46,6 +46,12 @@ typedef std::wstring tstring;
 typedef std::string tstring;
 #endif
 
+#if (defined (__WIN32__) || (_MSC_VER)) && (defined GRAPHICAL)
+#define MAIN_MACRO(name) int WINAPI WinMain(HINSTANCE inst, HINSTANCE p_inst, LPSTR arg, int nfs) { return name.main(inst, p_inst, arg, nfs); }
+#else
+#define MAIN_MACRO(name) int main(int argc, char *argv[]) { return name.main(argc, argv); }
+#endif
+
 struct rgb_col { int r; int g; int b; };
 struct dialog
 {

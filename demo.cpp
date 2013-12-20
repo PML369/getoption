@@ -7,11 +7,7 @@
 dialog d(int status, int button);
 getoption option("demo","Getoption Demo Program",640,480,0,255,255,255,0,0,16,"Times New Roman",d);
 
-#if (defined (__WIN32__) || (_MSC_VER)) && (defined GRAPHICAL)
-	int WINAPI WinMain(HINSTANCE inst, HINSTANCE p_inst, LPSTR arg, int nfs) { option.main(inst,p_inst,arg,nfs); }
-#else
-	int main(int argc,char *argv[]) { option.main(argc,argv); }
-#endif
+MAIN_MACRO(option)
 
 dialog d(int status, int button)
 {
